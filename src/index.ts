@@ -42,7 +42,7 @@ slowMath.add(6,2)
 
 async function doMath() {
     try {
-        let num: number = await slowMath.add(6,2);
+        let num: number = await slowMath.add(1,2);
         updateResults(`The result of adding the first two values is: <b>${num}</b>`);
         num = await slowMath.multiply(num, 2)
         updateResults(`The result after multiplying is: <b>${num}</b>`);
@@ -62,7 +62,12 @@ async function doMath() {
         updateResults(`The final result is: <b style="font-size: 1.5em">${num}</b>`);
         finishUpdates();
     } catch (err) {
-        console.error(err);
+        finishUpdates();
+        Swal.fire({
+            icon: 'error',
+            title: 'Uh oh!',
+            text: err
+        });
     }
 }
 
@@ -72,7 +77,7 @@ declare let Swal: any;
 let resultsContent: string = ''; 
 
 const mathResultsModal = Swal.fire({
-    title: "slowMath results",
+    title: 'slowMath results',
     showCancelButton: false,
     showConfirmButton: false,
     allowOutsideClick: false,

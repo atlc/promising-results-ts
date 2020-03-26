@@ -78,7 +78,7 @@ function doMath() {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 10, , 11]);
-                    return [4 /*yield*/, slowMath.add(6, 2)];
+                    return [4 /*yield*/, slowMath.add(1, 2)];
                 case 1:
                     num = _a.sent();
                     updateResults("The result of adding the first two values is: <b>" + num + "</b>");
@@ -118,7 +118,12 @@ function doMath() {
                     return [3 /*break*/, 11];
                 case 10:
                     err_1 = _a.sent();
-                    console.error(err_1);
+                    finishUpdates();
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Uh oh!',
+                        text: err_1
+                    });
                     return [3 /*break*/, 11];
                 case 11: return [2 /*return*/];
             }
@@ -128,7 +133,7 @@ function doMath() {
 doMath();
 var resultsContent = '';
 var mathResultsModal = Swal.fire({
-    title: "slowMath results",
+    title: 'slowMath results',
     showCancelButton: false,
     showConfirmButton: false,
     allowOutsideClick: false,
