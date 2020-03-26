@@ -2,6 +2,8 @@
  * SlowMath Library
  * Covalence, LLC
  */
+const DELAY_TIME: number = 750;
+
 let slowMath = (function() {
     const wait = (delay) => {
         return new Promise((resolve, reject) => {
@@ -12,7 +14,7 @@ let slowMath = (function() {
     };
 
     function add(a, b) {
-        return wait(1000)
+        return wait(DELAY_TIME)
         .then(() => {
             return negativeCheck(a, b);
         }).then((shouldResolve) => {
@@ -25,7 +27,7 @@ let slowMath = (function() {
     }
 
     function subtract(a, b) {
-        return wait(1000)
+        return wait(DELAY_TIME)
         .then(() => {
             return negativeCheck(a, b);
         }).then((shouldResolve) => {
@@ -38,7 +40,7 @@ let slowMath = (function() {
     }
 
     function multiply(a, b) {
-        return wait(1000)
+        return wait(DELAY_TIME)
         .then(() => {
             return negativeCheck(a, b);
         }).then((shouldResolve) => {
@@ -51,7 +53,7 @@ let slowMath = (function() {
     }
 
     function divide(a, b) {
-        return wait(1000)
+        return wait(DELAY_TIME)
         .then(() => {
             return negativeCheck(a, b);
         }).then((shouldResolve) => {
@@ -66,7 +68,7 @@ let slowMath = (function() {
     }
 
     function remainder(a, b) {
-        return wait(1000)
+        return wait(DELAY_TIME)
         .then(() => {
             return negativeCheck(a, b);
         }).then((shouldResolve) => {
