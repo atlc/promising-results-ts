@@ -1,0 +1,21 @@
+const slowMath = require('./slow-async-math');
+
+slowMath.add(6,2)
+.then((res: number) => console.log(res))
+.then((res: number) => slowMath.multiply(res, 2))
+.then((res: number) => console.log(res))
+.then((res: number) => slowMath.divide(res, 4))
+.then((res: number) => console.log(res))
+.then((res: number) => slowMath.subtract(res, 3))
+.then((res: number) => console.log(res))
+.then((res: number) => slowMath.add(res, 98))
+.then((res: number) => console.log(res))
+.then((res: number) => slowMath.remainder(res, 2))
+.then((res: number) => console.log(res))
+.then((res: number) => slowMath.multiply(res, 50))
+.then((res: number) => console.log(res))
+.then((res: number) => slowMath.divide(res, 40))
+.then((res: number) => console.log(res))
+.then((res: number) => slowMath.add(res, 32))
+.then((res: number) => console.log(`The final result is: ${res}`))
+.catch((err: Error) => console.error(`An error has occured.\n${err}`));
